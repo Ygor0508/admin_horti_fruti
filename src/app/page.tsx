@@ -38,11 +38,11 @@ export default function Home() {
 
   return (
     <main className="max-w-screen-xl flex flex-col items-center mx-auto p-6">
-      {/* Altere para o logo da sua feira */}
-      <img src="/logo_feira.png" alt="Feira Online" style={{ width: 240 }}
+      
+      <img src="/logo.png" alt="Feirô" style={{ width: 240 }}
         className="d-block" />
       <div className="max-w-sm">
-        <h1 className="text-3xl font-bold my-8">Admin: Feira Online</h1>
+        <h1 className="text-3xl font-bold my-8">Admin: Feirô</h1>
         <form className="max-w-sm mx-auto"
           onSubmit={handleSubmit(verificaLogin)} >
           <div className="mb-5">

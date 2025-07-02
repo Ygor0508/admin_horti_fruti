@@ -3,8 +3,8 @@ import "./globals.css";
 import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
-  title: "Admin: Revenda Herbie",
-  description: "Área Administrativa da Revenda Herbie",
+  title: "Admin: Feirô",
+  description: "Área Administrativa do Feirô",
 };
 
 export default function RootLayout({

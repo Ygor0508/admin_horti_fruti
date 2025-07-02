@@ -8,6 +8,6 @@ export interface MercadoriaI {
   categoria: string
   foto: string
   destaque: boolean
-  feirante: FeiranteI // Feirante relacionado
+  feirante: FeiranteI 
   feirante_id: number
 }

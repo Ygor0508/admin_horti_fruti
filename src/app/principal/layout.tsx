@@ -1,11 +1,52 @@
+// 'use client'
+// import Cookies from "js-cookie"
+// import { useRouter } from "next/navigation"
+// import { useEffect, useState } from "react"
+// import { Titulo } from "../../components/Titulo";
+// import { MenuLateral } from "../../components/MenuLateral";
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+
+//   const router = useRouter()
+//   const [logado, setLogado] = useState<boolean>(false)
+
+//   useEffect(() => {
+//     if (Cookies.get("admin_logado_id")) {
+//       setLogado(true)
+//     } else {
+//       router.replace("/")
+//     }
+//   }, [])
+
+//   return (
+//     <>
+//       {logado &&
+//         <div>
+//           <Titulo />
+//           <MenuLateral />
+//           <div className="p-4 sm:ml-64">
+//             {children}
+//           </div>
+//         </div>
+//       }
+//     </>
+//   )
+// }
+
+
+
+
 'use client'
 import Cookies from "js-cookie"
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { Titulo } from "../../components/Titulo";
-import { MenuLateral } from "../../components/MenuLateral";
+import { Sidebar } from "../../components/Sidebar"; 
 
-export default function RootLayout({
+export default function PrincipalLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -14,25 +55,30 @@ export default function RootLayout({
   const router = useRouter()
   const [logado, setLogado] = useState<boolean>(false)
 
+  // Lógica de autenticação que você já tinha
   useEffect(() => {
     if (Cookies.get("admin_logado_id")) {
       setLogado(true)
     } else {
-      router.replace("/")
+      router.replace("/") // Redireciona se não estiver logado
     }
-  }, [])
+  }, [router])
+
+  // Renderiza o layout apenas se o admin estiver logado
+  if (!logado) {
+    // Pode retornar um loader aqui se preferir
+    return null;
+  }
 
   return (
-    <>
-      {logado &&
-        <div>
-          <Titulo />
-          <MenuLateral />
-          <div className="p-4 sm:ml-64">
-            {children}
-          </div>
-        </div>
-      }
-    </>
-  )
+    // Estrutura do novo layout que eu sugeri
+    <div className="flex h-screen bg-gray-50">
+      <Sidebar />
+      <div className="flex-1 flex flex-col">
+        <main className="flex-1 p-8 overflow-y-auto">
+          {children}
+        </main>
+      </div>
+    </div>
+  );
 }

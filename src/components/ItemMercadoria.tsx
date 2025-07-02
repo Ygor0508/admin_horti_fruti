@@ -15,7 +15,7 @@ interface ListaMercadoriaProps {
 function ItemMercadoria({ mercadoria, mercadorias, setMercadorias }: ListaMercadoriaProps) {
 
   async function excluirMercadoria() {
-    // Aqui você pode adicionar a lógica de permissão se necessário
+
     if (confirm(`Confirma a exclusão da mercadoria "${mercadoria.nome}"?`)) {
       const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/mercadorias/${mercadoria.id}`,
         {

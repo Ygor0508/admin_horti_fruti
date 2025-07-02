@@ -6,9 +6,9 @@ export interface PedidoI {
   quantidade: number
   status: string
   mercadoria_id: number
-  mercadoria: MercadoriaI // Dados da mercadoria aninhados
+  mercadoria: MercadoriaI
   usuario_id: string
-  usuario: UsuarioI // Dados do usuário aninhados
+  usuario: UsuarioI
   createdAt: string
   updatedAt: string | null
 }
