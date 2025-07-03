@@ -5,6 +5,7 @@ import { FaRegStar } from "react-icons/fa"
 import Cookies from "js-cookie"
 import { MercadoriaI } from "@/utils/types/mercadorias"
 import { toast } from "sonner"
+import Image from "next/image"
 
 interface ListaMercadoriaProps {
   mercadoria: MercadoriaI,
@@ -62,8 +63,8 @@ function ItemMercadoria({ mercadoria, mercadorias, setMercadorias }: ListaMercad
   return (
     <tr key={mercadoria.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
       <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-        <img src={mercadoria.foto} alt="Foto da Mercadoria"
-          style={{ width: 200 }} />
+        <Image src={mercadoria.foto} alt="Foto da Mercadoria"
+          width={200} height={200} />
       </th>
       <td className={`px-6 py-4 ${mercadoria.destaque ? "font-extrabold" : ""}`}>
         {mercadoria.nome}

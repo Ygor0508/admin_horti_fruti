@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form"
 import { toast } from 'sonner'
 import { useRouter } from "next/navigation"
 import Cookies from 'js-cookie'
+import Image from "next/image"
 
 type Inputs = {
   email: string
@@ -16,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     setFocus("email")
-  }, [])
+  }, [setFocus])
 
   async function verificaLogin(data: Inputs) {
     const response = await fetch(`${process.env.NEXT_PUBLIC_URL_API}/admins/login`, {
@@ -38,8 +39,7 @@ export default function Home() {
 
   return (
     <main className="max-w-screen-xl flex flex-col items-center mx-auto p-6">
-      
-      <img src="/logo.png" alt="Feirô" style={{ width: 240 }}
+      <Image src="/logo.png" alt="Feirô" width={240} height={240}
         className="d-block" />
       <div className="max-w-sm">
         <h1 className="text-3xl font-bold my-8">Admin: Feirô</h1>
