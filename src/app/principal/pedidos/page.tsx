@@ -6,7 +6,7 @@ import { Trash2, Edit, X } from 'lucide-react';
 // Interface para definir a estrutura dos dados do pedido
 interface Pedido {
   id: number;
-  quantidade: string; 
+  quantidade: number; 
   status: string;
   usuario: {
     nome: string;
@@ -91,15 +91,23 @@ export default function ControleDePedidos() {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          quantidade: Number(editData.quantidade),
+          quantidade: editData.quantidade,
           status: editData.status,
         }),
       });
+
+      const data = await response.json();
+
+    console.log("RESPONSE STATUS:", response.status);
+    console.log("RESPONSE DATA:", data);
+
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.erro?.issues?.[0]?.message || 'Falha ao atualizar o pedido.');
       }
+
+
 
       toast.success('Pedido atualizado com sucesso!');
       setPedidoParaEditar(null); // Fecha o modal
