@@ -24,7 +24,7 @@ function CadUsuarios() {
     <div className='m-4 mt-24'>
       <div className='flex justify-between'>
         <h1 className="mb-4 text-2xl font-bold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
-          Controle de Usuários
+          Controle de Clientes
         </h1>
       </div>
 
@@ -32,7 +32,7 @@ function CadUsuarios() {
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">Nome do Usuário</th>
+              <th scope="col" className="px-6 py-3">Nome do Cliente</th>
               <th scope="col" className="px-6 py-3">E-mail</th>
               <th scope="col" className="px-6 py-3">Endereço</th>
               <th scope="col" className="px-6 py-3">Ações</th>

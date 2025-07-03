@@ -11,7 +11,7 @@ export function Sidebar() {
   const menuItems = [
     { href: "/principal", label: "Visão Geral", icon: LayoutDashboard },
     { href: "/principal/mercadorias", label: "Cadastro de Mercadorias", icon: Package },
-    { href: "/principal/usuarios", label: "Controle de Usuários", icon: Users },
+    { href: "/principal/usuarios", label: "Controle de Clientes", icon: Users },
     { href: "/principal/pedidos", label: "Controle de Pedidos", icon: ClipboardList },
     // { href: "/principal/configuracoes", label: "Configurações", icon: Settings },
   ];
